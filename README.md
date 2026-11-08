@@ -1,11 +1,59 @@
-<div align="center">
+# MIZN (مُزْن) — Smart Career & Opportunities Platform (العراق)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+منصة **MIZN (مُزْن)** هي المنصة الوطنية الذكية للوظائف، التعليم، التدريب الصيفي، المنح الدراسية، والتطوير المهني والذكاء الاصطناعي في العراق والوطن العربي.
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🌟 رؤية المنصة (Platform Vision)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- **سوق العمل العراقي أولاً**: دعم كامل للمحافظات العراقية الـ 18 (بغداد، أربيل، البصرة، النجف، كربلاء، الموصل، إلخ)، والعملة الافتراضية الدينار العراقي (IQD).
+- **الذكاء الاصطناعي الخالي من الانحياز**: خوارزمية مطابقة AI تفصيلية تقيّم المهارات والخبرة والموقع ونوع الدوام بنسبة من 0% إلى 100% بدون استخدام العرق، الدين، أو أي بيانات شخصية حساسة.
+- **صانع السيرة الذاتية (MIZN CV Builder)**: إنشاء ومعاينة وتصدير السيرة الذاتية الاحترافية بصيغة PDF وطباعتها فورياً.
+- **MIZN LEARN & OPPORTUNITIES**: دورات تدريبية متوافقة مع احتياجات شركات القطاع الخاص والعام، ومنح دراسية وتدريب عملي صيفي.
+- **لوحة الشركات والإدارة**: توثيق الشركات بالسجل التجاري الرسمي (C.R.)، وإدارة المرشحين، ولوحة تحكم شاملة للادارة (Super Admin Console).
 
-</div>
+---
+
+## 🛠️ التقنيات المعتمدة (Tech Stack)
+
+- **Frontend**: React 19, TypeScript, Vite 8, Tailwind CSS v4 (مع دعم كامل لـ RTL واللغتين العربية والإنجليزية، والوضع الداكن/الفاتح).
+- **Backend & AI Server**: Express.js Full-Stack (`server.ts`), `@google/genai` TypeScript SDK (`gemini-3.8-flash`), المحلي الخوارزمي البديل (Fallback Engine).
+- **Export & Utilities**: `jspdf` لإنشاء ملفات السيرة الذاتية PDF.
+- **Testing**: Node Native Test Runner & `tsx` (`npm run test`).
+
+---
+
+## 🚀 كيفية التشغيل والتجربة (Running & Testing)
+
+1. **تشغيل الخادم والتطوير**:
+   ```bash
+   npm run dev
+   ```
+
+2. **تشغيل الفحص البرمجي (Lint & TypeScript check)**:
+   ```bash
+   npm run lint
+   ```
+
+3. **تشغيل اختبارات الوحدة (Unit Tests)**:
+   ```bash
+   npm run test
+   ```
+
+4. **بناء المشروع للإنتاج (Production Build)**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📋 إنجازات المرحلة الأولى (PHASE 1 Completion Status)
+
+- [x] هيكلية المشروع وبناء الهوية البصرية اللائقة باللغة العربية والإنجليزية.
+- [x] إعداد Tailwind v4 و `@custom-variant dark` ودعم الوضع الداكن والخطوط (`Cairo` & `Plus Jakarta Sans`).
+- [x] عقد شريط التنقل العلوي القياسي 3-Zone Top Bar Contract والملاحة النظيفة.
+- [x] خوارزمية مطابقة السيرة الذاتية واختبارات الوحدة (`src/utils/aiMatcher.test.ts`).
+- [x] صانع السيرة الذاتية والتصدير المباشر PDF والطباعة.
+- [x] لوحة التوظيف والشركات ونظام المتقدمين.
+- [x] لوحة الإدارة العليا وتدقيق السجلات الأمنية (Audit Logs).
+- [x] إعداد خادم Express النقاط الذكية (`/api/ai/*`) وإكمال التوثيق.

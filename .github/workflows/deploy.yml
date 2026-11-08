@@ -1,0 +1,43 @@
+name: MIZN Platform CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Run TypeScript Strict Lint Checks
+        run: npm run lint
+
+      - name: Run Automated Test Suites
+        run: npm run test
+
+      - name: Build Production Application Asset
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages (Optional)
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'mizn-career-platform'
+          directory: 'dist'
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

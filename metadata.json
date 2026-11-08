@@ -1,0 +1,6 @@
+{
+  "name": "MIZN — Smart Career & Opportunities Platform",
+  "description": "منصة مزن الذكية للوظائف والتعليم والفرص والتطوير المهني والذكاء الاصطناعي في العراق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
